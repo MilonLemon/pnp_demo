@@ -1,43 +1,39 @@
-platform:
-  - x64
+# version string format -- This will be overwritten later anyway
+version: "{build}"
 
-image:
-  - Visual Studio 2015
+os:
   - Visual Studio 2017
+  - Visual Studio 2015
 
 init:
-  - git config --global core.autocrlf true
-
-environment:
-  matrix:
-    - nodejs_version: 10
-
-clone_folder: c:\projects\opencv-build
+  - git config --global core.autocrlf input
+  # Set build version to git commit-hash
+  - ps: Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_BRANCH) - $($env:APPVEYOR_REPO_COMMIT)"
 
 install:
-  - cmd: choco install cmake -y
-  - cmd: choco upgrade cmake
-  - ps: Install-Product node $env:nodejs_version x64
-  - node --version
-  - SET PATH=%PATH%;C:\Program Files\CMake\bin;
+  - git submodule update --init --recursive
 
-build: off
+# Win32 and x64 are CMake-compatible solution platform names.
+# This allows us to pass %PLATFORM% to CMake -A.
+platform:
+  - Win32
+  - x64
+
+# build Configurations, i.e. Debug, Release, etc.
+configuration:
+  - Debug
+  - Release
+
+#Cmake will autodetect the compiler, but we set the arch
+before_build:
+  - cmake -H. -BBuild -A%PLATFORM%
+
+# build with MSBuild
+build:
+  project: Build\ModernCppCI.sln        # path to Visual Studio solution or project
+  parallel: true                        # enable MSBuild parallel builds
+  verbosity: normal                     # MSBuild verbosity level {quiet|minimal|normal|detailed}
 
 test_script:
-  # install and run tests of opencv-build
-  - cd c:\projects\opencv-build
-  - npm install
-  - npm test
-
-  # install opencv4nodejs and run tests
-  - cd c:\projects
-  - git clone https://github.com/justadudewhohacks/opencv4nodejs
-  - cd opencv4nodejs
-  # uninstall npm version of opencv-build
-  - npm uninstall opencv-build
-  # install new opencv-build version
-  - npm install ../opencv-build
-  - npm install
-  - cd test
-  - npm install
-  - npm run test-appveyor
+  - cd Build
+  - ctest -V -j 2 -C %CONFIGURATION%
