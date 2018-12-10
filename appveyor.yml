@@ -15,7 +15,7 @@ matrix:
 platform:
     # будем гонять CI на amd64 и x86...
     - x64
-    - x86
+
 
 configuration:
     # ... и в дебажной, и в релизной конфигурациях ...
@@ -25,8 +25,6 @@ configuration:
 environment:
     matrix:
         # ... на трёх студиях (2010, 2012, 2015)
-        - TOOLCHAIN: msvc10
-        - TOOLCHAIN: msvc12
         - TOOLCHAIN: msvc14
 
 install:
