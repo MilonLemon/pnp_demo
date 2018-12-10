@@ -4,6 +4,8 @@ project( PNP_DEMO )
 FIND_PACKAGE(OpenCV REQUIRED)
 TARGET_LINK_LIBRARIES(MY_TARGET_NAME ${OpenCV_LIBS})
 
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 if(CMAKE_VERSION VERSION_GREATER 2.6)
   get_property(OpenCV_LANGUAGES GLOBAL PROPERTY ENABLED_LANGUAGES)
   if(NOT ";${OpenCV_LANGUAGES};" MATCHES ";CXX;")
@@ -137,10 +139,6 @@ You should manually point CMake variable OpenCV_DIR to your build of OpenCV libr
   set(OpenCV_FOUND FALSE CACHE BOOL "" FORCE)
   set(OPENCV_FOUND FALSE CACHE BOOL "" FORCE)
 endif()
-
-include_directories(
-    ${OpenCV_INCLUDE_DIRS}
-)
 
 add_library(pnp_lib
     src/CsvReader.cpp
