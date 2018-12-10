@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project( PNP_DEMO )
 
-find_package( OpenCV REQUIRED )
+FIND_PACKAGE(OpenCV REQUIRED)
+TARGET_LINK_LIBRARIES(MY_TARGET_NAME ${OpenCV_LIBS})
 
 include_directories(
     ${OpenCV_INCLUDE_DIRS}
