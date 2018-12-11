@@ -3,7 +3,8 @@ project( PNP_DEMO )
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/opt/local/lib/cmake/OpenCVConfig.cmake)
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/opt/local/lib/cmake/OpenCVConfig.cmake)
+set(CMAKE_MODULE_PATH "C:\tools")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
@@ -17,8 +18,8 @@ set(OpenCV_DIR=/home/ubuntu/opencv-3.2.0/share/OpenCV)
 
 set(SOURCE_FILES main.cpp)
 find_package(OpenCV REQUIRED)
-ADD_SUBDIRECTORY('C:\tools')
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/tools)
+#ADD_SUBDIRECTORY('C:\tools')
+#INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/tools)
 
 find_package(OpenCV HINTS /usr/local/opt/opencv3)
 
