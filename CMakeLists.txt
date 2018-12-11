@@ -6,17 +6,17 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/opt/local/lib/cmake/OpenCVConfig.cmake)
 set(CMAKE_MODULE_PATH "/tools/FindOpenCV.cmake")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+#set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
 
-set(OpenCV_INCLUDE_DIRS "/usr/local/opt/opencv3/include")
-set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
+#set(OpenCV_INCLUDE_DIRS "/usr/local/opt/opencv3/include")
+#set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 
-set(OPENCV_ROOT "/build/x86/vc11/lib") ##
-set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
+#set(OPENCV_ROOT "/build/x86/vc11/lib") ##
+#set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
 set(OpenCV_DIR "/tools")
 
-set(SOURCE_FILES main.cpp)
+#set(SOURCE_FILES main.cpp)
 find_package(OpenCV REQUIRED)
 #ADD_SUBDIRECTORY('C:\tools')
 #INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/tools)
