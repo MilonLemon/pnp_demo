@@ -11,6 +11,8 @@ set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
 set(OpenCV_INCLUDE_DIRS "/usr/local/opt/opencv3/include")
 set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 
+set(OPENCV_ROOT "/build/x86/vc11/lib") ##
+
 set(SOURCE_FILES main.cpp)
 
 find_package(OpenCV REQUIRED)
@@ -20,8 +22,6 @@ message(STATUS "OpenCV library status:")
 message(STATUS "    version: ${OpenCV_VERSION}")
 message(STATUS "    libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-
-include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(cv_project1 main.cpp)
 
