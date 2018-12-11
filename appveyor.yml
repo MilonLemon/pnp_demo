@@ -15,6 +15,7 @@ install:
   - choco install opencv -y
   - choco upgrade opencv
   #- git submodule update --init --recursive
+   - git clone https://github.com/opencv/opencv.git
 
 
 # This allows us to pass %PLATFORM% to CMake -A.
