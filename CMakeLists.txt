@@ -17,7 +17,14 @@ set(OpenCV_DIR=/home/ubuntu/opencv-3.2.0/share/OpenCV)
 
 set(SOURCE_FILES main.cpp)
 
-find_package(OpenCV REQUIRED)
+FIND_PACKAGE(YARP)
+
+# pick up YARP find scripts
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${YARP_MODULE_PATH})
+
+# now FindOpenCV.cmake is in CMAKE_MODULE_PATH
+FIND_PACKAGE(OpenCV)
+
 find_package(OpenCV HINTS /usr/local/opt/opencv3)
 
 message(STATUS "OpenCV library status:")
