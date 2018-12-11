@@ -12,10 +12,6 @@ install:
 platform:
   - x64
 
-configuration:
-  - Debug
-  - Release
-
 before_build:
   - cmake -H. -BBuild -A%PLATFORM%
 
