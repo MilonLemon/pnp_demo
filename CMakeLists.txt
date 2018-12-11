@@ -13,6 +13,7 @@ set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 set(SOURCE_FILES main.cpp)
 
 find_package(OpenCV REQUIRED)
+find_package(OpenCV HINTS /usr/local/opt/opencv3)
 
 message(STATUS "OpenCV library status:")
 message(STATUS "    version: ${OpenCV_VERSION}")
