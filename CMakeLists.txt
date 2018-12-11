@@ -16,10 +16,9 @@ set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
 set(OpenCV_DIR=/home/ubuntu/opencv-3.2.0/share/OpenCV)
 
 set(SOURCE_FILES main.cpp)
-
 find_package(OpenCV REQUIRED)
-ADD_SUBDIRECTORY(support/opencv)
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/support/opencv/include)
+ADD_SUBDIRECTORY('C:\tools')
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/tools)
 
 find_package(OpenCV HINTS /usr/local/opt/opencv3)
 
