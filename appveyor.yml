@@ -22,11 +22,11 @@ platform:
 #Cmake will autodetect the compiler, but we set the arch
 before_build:
   # - cmd: IF EXIST C:\OpenCV* CD C:\OpenCV*
-   - cmd: SET OPENCV_ROOT_PATH=%CD%\opencv
-   - cmd: CD %APP_PATH%
-   - cmd: SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin
-   - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin
-   - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\lib
+  # - cmd: SET OPENCV_ROOT_PATH=%CD%\opencv
+  # - cmd: CD %APP_PATH%
+  # - cmd: SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin
+  # - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin
+  # - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\lib
   # Here we need to copy the opencv.pc file from the repo into PKG_CONFIG_PATH
   # trick part is to check for the vc12 folder and use that one
   #- cmd: SET PKG_CONFIG_PATH=C:\GTK\lib\pkgconfig
