@@ -2,7 +2,7 @@
 version: "{build}"
 
 os:
-  - Visual Studio 2015
+  - unstable
 
 init:
   - git config --global core.autocrlf input
@@ -31,7 +31,8 @@ before_build:
   # - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\lib
   # Here we need to copy the opencv.pc file from the repo into PKG_CONFIG_PATH
   # trick part is to check for the vc12 folder and use that one
-  #- cmd: copy pnp_demo/opencv_x64.pc C:\GTK\lib\pkgconfig\opencv.pc
+  - cmd: SET PKG_CONFIG_PATH=C:\GTK\lib\pkgconfig
+  - cmd: copy pnp_demo/opencv_x64.pc C:\GTK\lib\pkgconfig\opencv.pc
   - cmake -H. -BBuild -A%PLATFORM%
 
 # build with MSBuild
