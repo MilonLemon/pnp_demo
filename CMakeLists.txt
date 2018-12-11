@@ -1,3 +1,22 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @MilonLemon Sign out
+1
+0 6 MilonLemon/pnp_demo
+forked from edgarriba/pnp_demo
+ Code  Pull requests 0  Projects 0  Wiki  Insights  Settings
+pnp_demo/CMakeLists.txt
+877deda  11 minutes ago
+@MilonLemon MilonLemon Update CMakeLists.txt
+@edgarriba @MilonLemon
+      
+49 lines (36 sloc)  1.52 KB
 cmake_minimum_required(VERSION 2.8)
 project( PNP_DEMO )
 
@@ -17,14 +36,7 @@ set(OpenCV_DIR=/home/ubuntu/opencv-3.2.0/share/OpenCV)
 
 set(SOURCE_FILES main.cpp)
 
-FIND_PACKAGE(YARP)
-
-# pick up YARP find scripts
-SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${YARP_MODULE_PATH})
-
-# now FindOpenCV.cmake is in CMAKE_MODULE_PATH
-FIND_PACKAGE(OpenCV)
-
+find_package(OpenCV REQUIRED)
 find_package(OpenCV HINTS /usr/local/opt/opencv3)
 
 message(STATUS "OpenCV library status:")
