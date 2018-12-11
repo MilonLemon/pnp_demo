@@ -1,22 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @MilonLemon Sign out
-1
-0 6 MilonLemon/pnp_demo
-forked from edgarriba/pnp_demo
- Code  Pull requests 0  Projects 0  Wiki  Insights  Settings
-pnp_demo/CMakeLists.txt
-877deda  11 minutes ago
-@MilonLemon MilonLemon Update CMakeLists.txt
-@edgarriba @MilonLemon
-      
-49 lines (36 sloc)  1.52 KB
 cmake_minimum_required(VERSION 2.8)
 project( PNP_DEMO )
 
