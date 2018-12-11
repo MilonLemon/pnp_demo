@@ -12,6 +12,7 @@ set(OpenCV_INCLUDE_DIRS "/usr/local/opt/opencv3/include")
 set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 
 set(OPENCV_ROOT "/build/x86/vc11/lib") ##
+set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
 
 set(SOURCE_FILES main.cpp)
 
