@@ -13,6 +13,7 @@ set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 
 set(OPENCV_ROOT "/build/x86/vc11/lib") ##
 set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
+set(OpenCV_DIR=/home/ubuntu/opencv-3.2.0/share/OpenCV)
 
 set(SOURCE_FILES main.cpp)
 
