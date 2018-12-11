@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 project( PNP_DEMO )
 
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 FIND_PACKAGE(OpenCV REQUIRED)
 TARGET_LINK_LIBRARIES(MY_TARGET_NAME ${OpenCV_LIBS})
-
-include_directories(${OpenCV_INCLUDE_DIRS})
 
 if(CMAKE_VERSION VERSION_GREATER 2.6)
   get_property(OpenCV_LANGUAGES GLOBAL PROPERTY ENABLED_LANGUAGES)
