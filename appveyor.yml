@@ -12,7 +12,7 @@ init:
 install:
   - cmd: ECHO "INSTALL OPENCV:"
   - choco upgrade chocolatey
-  - choco install opencv #-y
+  - choco install opencv -y
   - choco upgrade opencv
   #- git submodule update --init --recursive
 
@@ -31,7 +31,7 @@ before_build:
   # - cmd: DIR %OPENCV_ROOT_PATH%\build\%ARCH%\vc12\lib
   # Here we need to copy the opencv.pc file from the repo into PKG_CONFIG_PATH
   # trick part is to check for the vc12 folder and use that one
-  #- cmd: copy .\utils\opencv_x64.pc C:\GTK\lib\pkgconfig\opencv.pc
+  - cmd: copy .\utils\opencv_x64.pc C:\GTK\lib\pkgconfig\opencv.pc
   - cmake -H. -BBuild -A%PLATFORM%
 
 # build with MSBuild
