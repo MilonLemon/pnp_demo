@@ -3,7 +3,7 @@ project( PNP_DEMO )
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/FindOpenCV.cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/opt/local/lib/cmake/OpenCVConfig.cmake)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
@@ -13,7 +13,6 @@ set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
 
 set(OPENCV_ROOT "/build/x86/vc11/lib") ##
 set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
-export OpenCV_DIR=/opt/local/lib/cmake/
 
 set(SOURCE_FILES main.cpp)
 
