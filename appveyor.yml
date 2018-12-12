@@ -10,7 +10,7 @@ init:
   - ps: Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_BRANCH) - $($env:APPVEYOR_REPO_COMMIT)"
 
 install:
-  - cmd: echo %PATH%
+  - cmd: dir
   - cmd: ECHO "INSTALL OPENCV:"
   - choco upgrade chocolatey
   - choco install opencv #--version 2.4.13
