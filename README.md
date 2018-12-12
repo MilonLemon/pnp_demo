@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/MilonLemon/pnp_demo.svg?branch=master)](https://travis-ci.com/MilonLemon/pnp_demo)
+[![Build status](https://ci.appveyor.com/api/projects/status/ulde8r8c3dc1wj6n?svg=true)](https://ci.appveyor.com/project/MilonLemon/pnp-demo)
 # Google Summer of Code 2014 - OpenCV - PnP Demo
 
 Some explanations of the project: [Real Time Pose Estimation Tutorial and DLS implementation](http://www.google-melange.com/gsoc/project/details/google/gsoc2014/edgarriba/5757334940811264).
