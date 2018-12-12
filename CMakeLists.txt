@@ -16,8 +16,8 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 #set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
 #set(OpenCV_DIR "/tools")
 
-IF EXIST c:\tools\opencv* CD c:\tools\opencv*
-SET OPENCV_DIR=%CD%\build
+#IF EXIST c:\tools\opencv* CD c:\tools\opencv*
+SET (OPENCV_DIR=c:\tools\opencv\build)
 
 #set(SOURCE_FILES main.cpp)
 find_package(OpenCV REQUIRED)
