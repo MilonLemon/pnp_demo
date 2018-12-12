@@ -1,39 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 project( PNP_DEMO )
 
-include_directories(${OpenCV_INCLUDE_DIRS})
+find_package( OpenCV REQUIRED )
 
-#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/opt/local/lib/cmake/OpenCVConfig.cmake)
-#set(CMAKE_MODULE_PATH "/tools/FindOpenCV.cmake")
+include_directories(
+    ${OpenCV_INCLUDE_DIRS}
+)
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-#set(CMAKE_PREFIX_PATH "/usr/local/opt/opencv3/share/OpenCV")
-
-#set(OpenCV_INCLUDE_DIRS "/usr/local/opt/opencv3/include")
-#set(OpenCV_LIBS "/usr/local/opt/opencv3/lib")
-
-#set(OPENCV_ROOT "/build/x86/vc11/lib") ##
-#set(OPENCV_ROOT "/x86/vc11/lib/include/opencv")
-#set(OpenCV_DIR "/tools")
-
-#IF EXIST c:\tools\opencv* CD c:\tools\opencv*
-SET (OPENCV_DIR "c:/tools/opencv*/build")
-
-#set(SOURCE_FILES main.cpp)
-find_package(OpenCV REQUIRED)
-#ADD_SUBDIRECTORY('C:\tools')
-#INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/tools)
-
-find_package(OpenCV HINTS /usr/local/opt/opencv3)
-
-message(STATUS "OpenCV library status:")
-message(STATUS "    version: ${OpenCV_VERSION}")
-message(STATUS "    libraries: ${OpenCV_LIBS}")
-message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-
-add_executable(cv_project1 main.cpp)
-
-target_link_libraries(cv_project1 ${OpenCV_LIBS})
 add_library(pnp_lib
     src/CsvReader.cpp
     src/CsvWriter.cpp
