@@ -24,7 +24,7 @@ before_build:
   - cmd: IF EXIST c:\tools\opencv* CD c:\tools\opencv*
   - cmd: SET OPENCV_DIR=%CD%\build
   - cmd: echo Running cmake...
-  - cmd: cd ~\my_workspace\pnp_demo\
+  - cmd: cd c:\projects\pnp_demo
       
   # - cmd: IF EXIST C:\OpenCV* CD C:\OpenCV*
   # - cmd: SET OPENCV_ROOT_PATH=%CD%\opencv
